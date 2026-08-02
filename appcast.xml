@@ -1,24 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"
-     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>FlowPane Updates</title>
-    <link>https://metacodes.github.io/FlowPane-Web/</link>
-    <description>FlowPane software updates</description>
-    <language>en</language>
-    <!-- Generated release feeds replace this placeholder entry. -->
-    <item>
-      <title>FlowPane 0.0.0</title>
-      <description><![CDATA[Placeholder release entry.]]></description>
-      <pubDate>Sat, 01 Aug 2026 00:00:00 +0800</pubDate>
-      <sparkle:version>0</sparkle:version>
-      <sparkle:shortVersionString>0.0.0</sparkle:shortVersionString>
-      <enclosure
-        url="https://github.com/metacodes/FlowPane-Web/releases/download/v0.0.0/FlowPane-0.0.0.dmg"
-        sparkle:edSignature="REPLACE_WITH_SPARKLE_EDDSA_SIGNATURE"
-        length="0"
-        type="application/octet-stream" />
-    </item>
-  </channel>
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>FlowPane</title>
+        <item>
+            <title>1.0.5</title>
+            <pubDate>Sun, 02 Aug 2026 18:57:44 +0800</pubDate>
+            <link>https://metacodes.github.io/FlowPane-Web/</link>
+            <sparkle:version>436</sparkle:version>
+            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# FlowPane 1.0.5
+
+## New Features
+
+- Added configurable switcher settings.
+- Added current-application switching in Preview Grid with forward and reverse shortcuts.
+- Added automatic updates.
+- Added guided first-run onboarding for permissions and shortcuts.
+
+## Fixes
+
+- Improved screen capture permission handling.
+- Reduced preview prewarming delays and improved capture timing and reliability.
+- Improved event-tap and shortcut reliability.
+- Improved window activation reliability.
+
+## Improvements
+
+- Optimized preview capture performance, concurrency safety, and hardware API usage.
+- Improved Space compatibility, WindowServer integration, and preview presentation.
+- Refined onboarding window presentation and application icon masking.
+]]></description>
+            <enclosure url="https://github.com/metacodes/FlowPane-Web/releases/download/v1.0.5/FlowPane-1.0.5-436.dmg" length="5357490" type="application/octet-stream" sparkle:edSignature="fwE1OmjgOXgW4WgOKgxr0o85u5bb7ru9PH1dTGvE4LG00fLzKp3FKOnsmB/ftEHZT6a5NF0jlOpeFUCoe/irAQ=="/>
+        </item>
+    </channel>
 </rss>
