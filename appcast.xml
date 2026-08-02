@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>FlowPane Updates</title>
+    <link>https://metacodes.github.io/FlowPane-Web/</link>
+    <description>FlowPane software updates</description>
+    <language>en</language>
+    <!-- Generated release feeds replace this placeholder entry. -->
+    <item>
+      <title>FlowPane 0.0.0</title>
+      <description><![CDATA[Placeholder release entry.]]></description>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0800</pubDate>
+      <sparkle:version>0</sparkle:version>
+      <sparkle:shortVersionString>0.0.0</sparkle:shortVersionString>
+      <enclosure
+        url="https://github.com/metacodes/FlowPane-Web/releases/download/v0.0.0/FlowPane-0.0.0.dmg"
+        sparkle:edSignature="REPLACE_WITH_SPARKLE_EDDSA_SIGNATURE"
+        length="0"
+        type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" data-locale="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      const supported = new Set(["en", "zh-Hans"]);
+      let locale;
+      try {
+        const stored = localStorage.getItem("flowpane.website.locale");
+        if (supported.has(stored)) locale = stored;
+      } catch {}
+      if (!locale) {
+        const languages = Array.isArray(navigator.languages) && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language];
+        for (const language of languages) {
+          const primary = String(language || "").toLowerCase().split("-")[0];
+          if (primary === "zh") { locale = "zh-Hans"; break; }
+          if (primary === "en") { locale = "en"; break; }
+        }
+      }
+      locale ||= "en";
+      document.documentElement.dataset.locale = locale;
+      document.documentElement.lang = locale;
+    })();
+  </script>
+  <style>
+    [data-lang] { display: none !important; }
+    html[data-locale="en"] [data-lang="en"],
+    html[data-locale="zh-Hans"] [data-lang="zh-Hans"] { display: revert !important; }
+  </style>
+  <title data-title-en="Privacy | FlowPane"
+         data-title-zh-hans="隐私 | FlowPane">Privacy | FlowPane</title>
+  <meta name="description" content="How FlowPane uses macOS permissions and keeps window previews local to your Mac."
+        data-meta-en="How FlowPane uses macOS permissions and keeps window previews local to your Mac."
+        data-meta-zh-hans="了解 FlowPane 如何使用 macOS 权限，并让窗口预览只保留在你的 Mac 本地。">
+  <link rel="canonical" href="https://metacodes.github.io/FlowPane-Web/privacy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/app-icon-32.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FlowPane">
+  <meta property="og:url" content="https://metacodes.github.io/FlowPane-Web/privacy.html">
+  <meta property="og:title" content="Privacy | FlowPane"
+        data-meta-en="Privacy | FlowPane" data-meta-zh-hans="隐私 | FlowPane">
+  <meta property="og:description" content="Window previews stay local to your Mac."
+        data-meta-en="Window previews stay local to your Mac."
+        data-meta-zh-hans="窗口预览只保留在你的 Mac 本地。">
+  <meta property="og:image" content="https://metacodes.github.io/FlowPane-Web/assets/images/social-card.jpg">
+  <meta property="og:locale" content="en_US" data-og-locale>
+  <meta property="og:locale:alternate" content="zh_CN">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body class="privacy-page">
+  <a class="skip-link" href="#main">
+    <span data-lang="en" data-i18n="privacy.skip">Skip to content</span>
+    <span data-lang="zh-Hans" data-i18n="privacy.skip">跳到正文</span>
+  </a>
+
+  <header class="site-header">
+    <nav class="nav-shell privacy-nav" aria-label="Privacy navigation"
+         data-aria-en="Privacy navigation" data-aria-zh-hans="隐私页面导航">
+      <a class="brand" href="index.html" aria-label="FlowPane home"
+         data-aria-en="FlowPane home" data-aria-zh-hans="FlowPane 首页">
+        <img src="assets/icons/app-icon-32.png" width="32" height="32" alt="">
+        <span>FlowPane</span>
+      </a>
+      <div class="nav-actions">
+        <a class="privacy-back" href="index.html">
+          <span data-lang="en" data-i18n="privacy.back">Back to overview</span>
+          <span data-lang="zh-Hans" data-i18n="privacy.back">返回产品介绍</span>
+        </a>
+        <div class="language-switcher" role="group" aria-label="Choose language"
+             data-aria-en="Choose language" data-aria-zh-hans="选择语言">
+          <button type="button" data-set-locale="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-locale="zh-Hans" aria-pressed="false">中文</button>
+        </div>
+        <a class="button button-small privacy-download" href="https://github.com/metacodes/FlowPane-Web/releases/latest" data-download>
+          <span data-lang="en" data-i18n="privacy.download">Download for Mac</span>
+          <span data-lang="zh-Hans" data-i18n="privacy.download">下载 Mac 版</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="legal-shell">
+    <header class="legal-hero reveal">
+      <p class="section-label">
+        <span data-lang="en" data-i18n="legal.label">FlowPane privacy</span>
+        <span data-lang="zh-Hans" data-i18n="legal.label">FlowPane 隐私说明</span>
+      </p>
+      <h1>
+        <span data-lang="en" data-i18n="legal.title">Your windows stay on your Mac.</span>
+        <span data-lang="zh-Hans" data-i18n="legal.title">你的窗口，只留在 Mac 上。</span>
+      </h1>
+      <p>
+        <span data-lang="en" data-i18n="legal.intro">FlowPane requests only the macOS permissions needed for the switching experience you choose.</span>
+        <span data-lang="zh-Hans" data-i18n="legal.intro">FlowPane 仅请求你所选择的窗口切换体验真正需要的 macOS 权限。</span>
+      </p>
+    </header>
+
+    <div class="legal-content reveal" data-delay="1">
+      <section aria-labelledby="accessibility-title">
+        <h2 id="accessibility-title">
+          <span data-lang="en" data-i18n="legal.accessibility.title">Accessibility</span>
+          <span data-lang="zh-Hans" data-i18n="legal.accessibility.title">辅助功能</span>
+        </h2>
+        <p>
+          <span data-lang="en" data-i18n="legal.accessibility.body">Accessibility is used only when FlowPane focuses and raises the real window you select. It is not used to read window contents.</span>
+          <span data-lang="zh-Hans" data-i18n="legal.accessibility.body">辅助功能权限仅用于聚焦并置前你选择的真实窗口，不用于读取窗口内容。</span>
+        </p>
+      </section>
+
+      <section aria-labelledby="recording-title">
+        <h2 id="recording-title">
+          <span data-lang="en" data-i18n="legal.recording.title">Screen Recording</span>
+          <span data-lang="zh-Hans" data-i18n="legal.recording.title">屏幕录制</span>
+        </h2>
+        <p>
+          <span data-lang="en" data-i18n="legal.recording.body">Screen Recording is used only to create Preview Grid thumbnails locally on your Mac. FlowPane does not upload those previews. Compact List works without this permission.</span>
+          <span data-lang="zh-Hans" data-i18n="legal.recording.body">屏幕录制权限仅用于在你的 Mac 本地创建预览网格缩略图。FlowPane 不会上传这些预览，紧凑列表无需此权限。</span>
+        </p>
+      </section>
+
+      <section aria-labelledby="website-title">
+        <h2 id="website-title">
+          <span data-lang="en" data-i18n="legal.website.title">This website</span>
+          <span data-lang="zh-Hans" data-i18n="legal.website.title">本网站</span>
+        </h2>
+        <p>
+          <span data-lang="en" data-i18n="legal.website.body">This static website has no analytics, advertising, cookies, forms, accounts, or remote localization. A manual language choice is stored only in your browser.</span>
+          <span data-lang="zh-Hans" data-i18n="legal.website.body">这个静态网站不使用分析统计、广告、Cookie、表单、账户或远程翻译服务。手动语言选择只保存在你的浏览器中。</span>
+        </p>
+      </section>
+
+      <section aria-labelledby="source-title">
+        <h2 id="source-title">
+          <span data-lang="en" data-i18n="legal.source.title">Proprietary software</span>
+          <span data-lang="zh-Hans" data-i18n="legal.source.title">专有软件</span>
+        </h2>
+        <p>
+          <span data-lang="en" data-i18n="legal.source.body">FlowPane is proprietary software. Its public GitHub repository contains this website and release downloads, not the application source code.</span>
+          <span data-lang="zh-Hans" data-i18n="legal.source.body">FlowPane 是专有软件。公开 GitHub 仓库仅包含本网站与版本下载，不包含应用源代码。</span>
+        </p>
+      </section>
+
+      <p class="legal-updated">
+        <span data-lang="en" data-i18n="legal.updated">Last updated: July 20, 2026</span>
+        <span data-lang="zh-Hans" data-i18n="legal.updated">最后更新：2026 年 7 月 20 日</span>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div class="footer-brand">
+      <img src="assets/icons/app-icon-32.png" width="28" height="28" alt="">
+      <span>FlowPane</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">
+        <span data-lang="en" data-i18n="legal.footer.home">Overview</span>
+        <span data-lang="zh-Hans" data-i18n="legal.footer.home">产品介绍</span>
+      </a>
+      <a href="https://github.com/metacodes/FlowPane-Web/releases">
+        <span data-lang="en" data-i18n="legal.footer.releases">Releases</span>
+        <span data-lang="zh-Hans" data-i18n="legal.footer.releases">版本发布</span>
+      </a>
+    </div>
+    <p>
+      <span data-lang="en" data-i18n="legal.footer.copyright">© 2026 FlowPane. All rights reserved.</span>
+      <span data-lang="zh-Hans" data-i18n="legal.footer.copyright">© 2026 FlowPane。保留所有权利。</span>
+    </p>
+  </footer>
+</body>
+</html>
