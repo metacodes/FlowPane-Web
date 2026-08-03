@@ -3,6 +3,23 @@
     <channel>
         <title>FlowPane</title>
         <item>
+            <title>1.0.7</title>
+            <pubDate>Tue, 04 Aug 2026 01:58:45 +0800</pubDate>
+            <link>https://metacodes.github.io/FlowPane-Web/</link>
+            <sparkle:version>463</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# FlowPane 1.0.7
+
+## Improvements
+
+- Refined Hover Preview panel styling and visibility handling.
+- Added dynamic icon refresh for prewarmed compact-list rows.
+- Refined window-cache logic and updated window counting.
+]]></description>
+            <enclosure url="https://github.com/metacodes/FlowPane-Web/releases/download/v1.0.7/FlowPane-1.0.7-463.dmg" length="5365794" type="application/octet-stream" sparkle:edSignature="2wZ7QNLZXOubhM5hxbHiF5g4dXZNxNc8wIlVuYk8TYZQXobfsJ/rflO12JCxwH41282Gymud5L04SAFp8MfeDw=="/>
+        </item>
+        <item>
             <title>1.0.6</title>
             <pubDate>Mon, 03 Aug 2026 18:32:52 +0800</pubDate>
             <link>https://metacodes.github.io/FlowPane-Web/</link>
